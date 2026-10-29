@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Stay Focused settings</title>
+  <style>
+    body { font: 14px/1.5 system-ui, sans-serif; max-width: 480px; margin: 32px auto; padding: 0 16px; }
+    label { display: block; margin-top: 16px; font-weight: 600; }
+    input, textarea { width: 100%; box-sizing: border-box; padding: 6px 8px; margin-top: 4px; font: inherit; }
+    small { color: #6b7280; font-weight: 400; }
+    button { margin-top: 20px; padding: 6px 16px; font: inherit; }
+    #status { margin-left: 12px; color: #047857; }
+  </style>
+</head>
+<body>
+  <h1>Stay Focused</h1>
+  <label>Gateway base URL
+    <input id="baseUrl" type="url" placeholder="https://llm-gateway.example.com/v1">
+    <small>The extension calls <code>{base URL}/chat/completions</code>.</small>
+  </label>
+  <label>API key
+    <input id="apiKey" type="password" autocomplete="off">
+  </label>
+  <label>Model
+    <input id="model" type="text" placeholder="claude-sonnet-4-5">
+  </label>
+  <label>Seconds on a page before it counts as reading
+    <input id="readingThresholdSeconds" type="number" min="1" step="1" placeholder="60">
+  </label>
+  <label>Pop-ups per page when you leave
+    <input id="maxNudges" type="number" min="1" step="1" placeholder="1">
+    <small>After a pop-up, you must return to the page before the next one can appear.</small>
+  </label>
+  <label>Excluded sites
+    <textarea id="excludedSites" rows="5" placeholder="docs.example.com&#10;wiki.example.org"></textarea>
+    <small>One domain per line. A domain also covers its subdomains. These pages are never sent to the gateway.
+    Mail, banking, login, intranet, internal and localhost sites are always excluded.</small>
+  </label>
+  <button id="save">Save</button>
+  <button id="test">Test connection</button><span id="status"></span>
+  <pre id="result" style="white-space:pre-wrap;color:#374151"></pre>
+  <script src="options.js"></script>
+</body>
+</html>

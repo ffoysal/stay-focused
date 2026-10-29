@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Simplified for 16/32px: no viewfinder corners, thicker rings, so it stays legible. -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4338ca"/>
+      <stop offset="0.55" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="124" height="124" rx="30" fill="url(#bg)"/>
+  <circle cx="64" cy="64" r="42" fill="none" stroke="#fff" stroke-opacity="0.45" stroke-width="12"/>
+  <circle cx="64" cy="64" r="24" fill="none" stroke="#fff" stroke-width="12"/>
+  <circle cx="64" cy="64" r="12" fill="#fbbf24"/>
+</svg>

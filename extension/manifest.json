@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Stay Focused",
+  "version": "0.1.0",
+  "description": "Detects when you are reading a page and nudges you if you leave it within 15 minutes.",
+  "permissions": ["storage", "tabs", "idle"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_title": "Stay Focused settings",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    }
+  },
+  "options_page": "options.html"
+}
